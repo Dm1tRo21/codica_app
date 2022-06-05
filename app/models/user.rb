@@ -3,4 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+  def admin?
+    user_type == 'admin'
+  end
+
+  def doctor?
+    user_type == 'doctor'
+  end
+  
 end

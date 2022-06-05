@@ -27,6 +27,7 @@
             </li>
           </ul>
           <button type="button" onclick="location.href='/users/sign_in'" class="btn btn-outline-info">Login</button>
+          <%= button_to "Logout", destroy_user_session_path, :method => "delete", class: 'btn btn-outline-info' %>
         </div>
       </div>
     </nav>
