@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class DepartmentDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,15 +9,9 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
-    password: Field::Password,
-    password_confirmation: Field::Password,
-    remember_created_at: Field::DateTime,
-    user_type: Field::String,
-    department: Field::BelongsTo.with_options(
-      searchable: true,
-      searchable_fields: ['name'],
-    ),
+    name: Field::String,
+    description: Field::Text,
+    image: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,19 +23,18 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    email
-    department
-    user_type
+    name
+    description
+    image
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    email
-    remember_created_at
-    department
-    user_type
+    name
+    description
+    image
     created_at
     updated_at
   ].freeze
@@ -50,10 +43,9 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    email
-    password
-    password_confirmation
-    department
+    name
+    description
+    image
   ].freeze
 
   # COLLECTION_FILTERS
@@ -66,14 +58,12 @@ class UserDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { resources.where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {
-    user_type: ->(resources) { resources.where(user_type: 'doctor') }
-  }.freeze
+  COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how departments are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(user)
-    "User #{user.email}"
-  end
+  # def display_resource(department)
+  #   "Department ##{department.id}"
+  # end
 end

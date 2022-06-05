@@ -35,6 +35,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       ## Roles
       t.string :user_type, null: false, default: "user"
 
+      t.belongs_to :department
+
       t.timestamps null: false
     end
 

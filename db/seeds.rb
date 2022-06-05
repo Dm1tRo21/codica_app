@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-User.create(email: 'user@bit.com', password: '123123', password_confirmation: '123123', user_type: 'user')
-User.create(email: 'doctor@bit.com', password: '123123', password_confirmation: '123123', user_type: 'doctor')
-User.create(email: 'admin@bit.com', password: '123123', password_confirmation: '123123', user_type: 'admin')
+
+Department.create(name: 'окулист')
+
+User.create(email: 'user@bit.com', password: '123123', password_confirmation: '123123', user_type: 'user', department_id: 1)
+User.create(email: 'doctor@bit.com', password: '123123', password_confirmation: '123123', user_type: 'doctor', department_id: 1)
+User.create(email: 'admin@bit.com', password: '123123', password_confirmation: '123123', user_type: 'admin', department_id: 1)
 
