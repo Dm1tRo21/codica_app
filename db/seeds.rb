@@ -8,7 +8,7 @@
 
 Department.create(name: 'окулист')
 
-User.create(email: 'user@bit.com', password: '123123', password_confirmation: '123123', user_type: 'user', department_id: 1)
-User.create(email: 'doctor@bit.com', password: '123123', password_confirmation: '123123', user_type: 'doctor', department_id: 1)
-User.create(email: 'admin@bit.com', password: '123123', password_confirmation: '123123', user_type: 'admin', department_id: 1)
+User.create(email: 'user@bit.com', phone: '0933406221', password: '123123', password_confirmation: '123123', user_type: 'user', department_id: 1)
+User.create(email: 'doctor@bit.com', phone: '0933406222', password: '123123', password_confirmation: '123123', user_type: 'doctor', department_id: 1)
+User.create(email: 'admin@bit.com', phone: '0933406223', password: '123123', password_confirmation: '123123', user_type: 'admin', department_id: 1)
 
