@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :department
+  belongs_to :department, optional: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -16,11 +16,11 @@ class User < ApplicationRecord
   end
 
   def admin?
-    user_type == 'admin'
+    user_role == 'admin'
   end
 
   def doctor?
-    user_type == 'doctor'
+    user_role == 'doctor'
   end
 
 end

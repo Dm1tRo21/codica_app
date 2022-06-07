@@ -16,7 +16,7 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
           <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
           <div class="form-floating">
-            <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class: 'form-control', placeholder: 'Phone' %>
+            <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class: 'form-control phone-mask', placeholder: 'Phone' %>
             <%= f.label :phone, 'Phone' %>
           </div>
           <div class="form-floating">
@@ -32,5 +32,11 @@
         <%= f.button "Sign in", class: 'w-100 btn btn-lg btn-primary' %>
         <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
       <% end %>
-  </div> <!-- /container --> 
+    </div> <!-- /container --> 
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('.phone-mask').mask("+38(999)999-99-99"); 
+  });
+</script>
