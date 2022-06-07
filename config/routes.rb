@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :cabinet_doctor do
+    get 'cabinet/index'
+  end
+  namespace :cabinet_patient do
+    get 'cabinet/index'
+  end
   resources :departments
   namespace :admin do
       resources :users
