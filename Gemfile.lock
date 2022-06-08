@@ -78,6 +78,8 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-bootstrap-theme (1.0.6)
+      administrate (~> 0.14)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.12.0)
@@ -271,6 +273,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-bootstrap-theme (~> 1.0)
   bootsnap
   cancancan
   capybara

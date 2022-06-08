@@ -55,6 +55,7 @@ gem "bootsnap", require: false
 gem 'devise'
 gem 'cancancan'
 gem "administrate"
+gem 'administrate-bootstrap-theme', '~> 1.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
