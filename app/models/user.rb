@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates :phone, uniqueness: true
   
+  has_one_attached :photo
+  
   scope :user, -> { where(user_role: 'user') }
   scope :doctor, -> { where(user_role: 'doctor') }
   scope :admin, -> { where(user_role: 'admin') }

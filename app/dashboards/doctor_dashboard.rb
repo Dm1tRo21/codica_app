@@ -9,6 +9,9 @@ class DoctorDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    photo: Field::ActiveStorage.with_options(
+      show_preview_size: [300, 300]
+    ),
     phone: Field::String,
     encrypted_password: Field::String,
     first_name: Field::String,
@@ -20,7 +23,6 @@ class DoctorDashboard < Administrate::BaseDashboard
     birthday: Field::Date,
     email: Field::Email,
     address: Field::String,
-    foto: Field::String,
     description: Field::Text,
     user_role: Field::Select.with_options(
       collection: ['user', 'doctor', 'admin'],
@@ -52,6 +54,7 @@ class DoctorDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+    photo
     phone
     first_name
     last_name
@@ -59,7 +62,6 @@ class DoctorDashboard < Administrate::BaseDashboard
     birthday
     email
     address
-    foto
     description
     user_role
     department
@@ -74,6 +76,7 @@ class DoctorDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    photo
     phone
     first_name
     last_name
@@ -81,7 +84,6 @@ class DoctorDashboard < Administrate::BaseDashboard
     birthday
     email
     address
-    foto
     description
     user_role
     department

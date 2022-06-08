@@ -80,6 +80,9 @@ GEM
       selectize-rails (~> 0.6)
     administrate-bootstrap-theme (1.0.6)
       administrate (~> 0.14)
+    administrate-field-active_storage (0.4.1)
+      administrate (>= 0.2.2)
+      rails (>= 7.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.12.0)
@@ -118,6 +121,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -150,6 +156,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
     momentjs-rails (2.29.1.1)
@@ -215,6 +222,8 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -274,12 +283,14 @@ PLATFORMS
 DEPENDENCIES
   administrate
   administrate-bootstrap-theme (~> 1.0)
+  administrate-field-active_storage
   bootsnap
   cancancan
   capybara
   cssbundling-rails
   debug
   devise
+  image_processing
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

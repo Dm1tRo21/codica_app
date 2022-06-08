@@ -20,7 +20,6 @@ class AdministratorDashboard < Administrate::BaseDashboard
     birthday: Field::Date,
     email: Field::Email,
     address: Field::String,
-    foto: Field::String,
     description: Field::Text,
     user_role: Field::Select.with_options(
       collection: ['user', 'doctor', 'admin'],
@@ -59,7 +58,6 @@ class AdministratorDashboard < Administrate::BaseDashboard
     birthday
     email
     address
-    foto
     description
     user_role
     department
@@ -81,7 +79,6 @@ class AdministratorDashboard < Administrate::BaseDashboard
     birthday
     email
     address
-    foto
     description
     user_role
     department
