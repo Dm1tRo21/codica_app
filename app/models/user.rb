@@ -6,6 +6,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :phone, uniqueness: true
+  
+  scope :user, -> { where(user_role: 'user') }
+  scope :doctor, -> { where(user_role: 'doctor') }
+  scope :admin, -> { where(user_role: 'admin') }
 
   def email_required?
     false
