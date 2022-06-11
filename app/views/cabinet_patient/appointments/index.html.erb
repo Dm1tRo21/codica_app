@@ -1,0 +1,27 @@
+<h1>Appointments</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Doctor</th>
+      <th scope="col">Department</th>
+      <th scope="col">Time</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 0 %>
+    <% @appointment.each do |v| %>
+    <tr>
+      <th scope="row"><%= i += 1 %></th>
+      <td><%= "#{v.doctor.first_name} #{v.doctor.last_name}" %></td>
+      <td><%= v.doctor.department.name %></td>
+      <td><%= v.start_time %></td>
+      <td><%= v.status %></td>
+      <td><%= link_to "Datail", cabinet_patient_appointment_path(id: v.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     get 'cabinet/index'
   end
   namespace :cabinet_patient do
+    resources  :appointments, only: [:index, :show] do
+      get '/department/:department_id/new', to: 'appointments#new', as: 'new', on: :collection
+      get 'add', to: 'appointments#add', as: 'add', on: :collection
+    end
     get 'cabinet/index'
   end
   resources :departments
