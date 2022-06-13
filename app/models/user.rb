@@ -31,4 +31,11 @@ class User < ApplicationRecord
     user_role == 'doctor'
   end
 
+  def patient?
+    user_role == 'user'
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

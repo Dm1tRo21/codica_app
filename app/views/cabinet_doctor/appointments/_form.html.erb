@@ -1,0 +1,37 @@
+<%= form_with( model: [:cabinet_doctor, appointment]) do |form| %>
+  <% if appointment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this department from being saved:</h2>
+      <ul>
+        <% appointment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="d-flex flex-row bd-highlight mb-3 fw-bold">
+      <div class="bd-highlight ">
+        <p class="col-md-12 fs-5">Name: <%= appointment.patient.last_name %> <%= appointment.patient.first_name %></p>
+        <p class="col-md-12 fs-5">Phone: <%= appointment.patient.phone%></p>
+      </div>
+      <div class="px-5 bd-highlight">
+        <p class="col-md-12 fs-5">Email: <%= appointment.patient.email%></p>
+        <p class="col-md-12 fs-5">Gender: <%= appointment.patient.gender%></p>
+      </div>
+      <div class="px-5 bd-highlight">
+        <p class="col-md-12 fs-5">Birthday: <%= appointment.patient.birthday%></p>
+      </div>
+    </div>
+    
+    <div class="form-floating py-1">
+      <%= form.text_area :recommendation, size: "90x8", class:"form-control"%>
+      <%= form.label :recommendation, style: "display: block", class: "col-md-8 fs-4"%>
+    </div>
+  </div>
+  <div class="pt-4">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

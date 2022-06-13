@@ -4,6 +4,19 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user ||= User.new # guest user (not logged in)
+
+    case user.user_role
+    when 'admin'
+      can :manage, :all
+    when 'user'
+      can :read, Appointment, patient_id: user.id
+    when 'doctor'
+      can :read, Appointment, doctor_id: user.id
+      can :edit, Appointment, status: 'new', doctor_id: user.id
+    end
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

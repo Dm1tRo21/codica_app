@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   namespace :cabinet_doctor do
-    get 'cabinet/index'
+    resources :appointments, only: [:index, :show, :edit, :update]
   end
   namespace :cabinet_patient do
-    resources  :appointments, only: [:index, :show] do
+    resources  :appointments, only: [:index, :show, :create] do
       get '/department/:department_id/new', to: 'appointments#new', as: 'new', on: :collection
       get 'add', to: 'appointments#add', as: 'add', on: :collection
     end
@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   resources :departments
   namespace :admin do
       resources :users
-      resources :doctors
-      resources :administrators
       resources :departments
 
       root to: "users#index"

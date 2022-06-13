@@ -1,9 +1,6 @@
-<h1>New department</h1>
-
-<%= render "form", appointment: @appointment %>
-
-<br>
-
-<div>
-  <%= link_to "Back to departments", cabinet_patient_appointments_path %>
+<div class="p-3 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-3">
+    <h1 class="display-4 fw-bold">New appointment</h1>
+    <%= render "form", appointment: @appointment %>
+  </div>
 </div>

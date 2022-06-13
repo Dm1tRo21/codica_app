@@ -2,7 +2,6 @@
   <% if appointment.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this department from being saved:</h2>
-
       <ul>
         <% appointment.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,23 +10,22 @@
     </div>
   <% end %>
 
-
-
-  <div class="row">
-    <%= form.label :doctor, class: "col-2 col-form-label", style: "display: block" %>
-    <div class="col-10">
+  <div class=" p-1 row">
+    <%= form.label :doctor, class: "col-1 col-form-label fw-bold", style: "display: block" %>
+    <div class="col-2">
       <%= form.collection_select :doctor_id, Doctor.where(department_id: @department_id), :id, :full_name, options = {}, html_options = { class: "form-select" } %>
     </div>
   </div>
-
-  <div class="row">
-    <%= form.label :date, class: "col-2 col-form-label", style: "display: block" %>
-    <div class="col-10">
-      <%= form.datetime_local_field :start_time %>
+  
+  <div class="p-1 row">
+    <%= form.label :date, class: "col-1 col-form-label fw-bold", style: "display: block" %>
+    <div class="col-2">
+      <%= form.datetime_local_field :start_time, class: "form-select" %>
     </div>
   </div>
 
-  <div>
-    <%= form.submit class: 'btn btn-primary' %>
+  <div class="pt-5">
+    <%= link_to "Back to departments", add_cabinet_patient_appointments_path,  class:"btn btn-primary"%>
+    <%= form.submit class: 'btn btn-success' %>
   </div>
 <% end %>

@@ -6,6 +6,7 @@ class CabinetPatient::AppointmentsController < CabinetPatient::CabinetController
   end
 
   def show
+    authorize! :read, @appointment
   end
 
   def add
