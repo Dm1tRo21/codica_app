@@ -13,7 +13,7 @@
   <div class=" p-1 row">
     <%= form.label :doctor, class: "col-1 col-form-label fw-bold", style: "display: block" %>
     <div class="col-2">
-      <%= form.collection_select :doctor_id, Doctor.where(department_id: @department_id), :id, :full_name, options = {}, html_options = { class: "form-select" } %>
+      <%= form.collection_select :doctor_id, User.where(department_id: @department_id), :id, :full_name, options = {}, html_options = { class: "form-select" } %>
     </div>
   </div>
   

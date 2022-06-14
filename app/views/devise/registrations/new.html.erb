@@ -20,6 +20,21 @@
             <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class: 'form-control' %>
             <%= f.label :phone %>
           </div>
+          
+          <div class="form-floating">
+            <%= f.email_field :email, autocomplete: "email", class: 'form-control' %>
+            <%= f.label :email %>
+          </div>
+
+          <div class="form-floating">
+            <%= f.text_field :first_name, autocomplete: "first name", class: 'form-control' %>
+            <%= f.label :first_name %>
+          </div>
+
+          <div class="form-floating">
+            <%= f.text_field :last_name, autocomplete: "last name", class: 'form-control' %>
+            <%= f.label :last_name %>
+          </div>
 
           <div class="form-floating">
             <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
